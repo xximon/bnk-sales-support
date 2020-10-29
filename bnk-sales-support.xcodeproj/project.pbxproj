@@ -45,6 +45,7 @@
 		247D2562254AA1AD00100997 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		247D2563254AA1AD00100997 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		247D2564254AA1AD00100997 /* TestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
+		247D256A254ABA9100100997 /* bnk-sales-support-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bnk-sales-support-Prefix.pch"; sourceTree = "<group>"; };
 		31F9293D9503A3DB19911005 /* Pods_bnk_sales_support.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bnk_sales_support.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3F725E94013FF4DFA4F149D /* Pods-bnk-sales-support.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bnk-sales-support.release.xcconfig"; path = "Target Support Files/Pods-bnk-sales-support/Pods-bnk-sales-support.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,6 +111,7 @@
 				243F9C08254A8674002F52A6 /* Assets.xcassets */,
 				243F9C0A254A8674002F52A6 /* LaunchScreen.storyboard */,
 				243F9C0D254A8674002F52A6 /* Info.plist */,
+				247D256A254ABA9100100997 /* bnk-sales-support-Prefix.pch */,
 				243F9C0E254A8674002F52A6 /* main.m */,
 				243F9C05254A8672002F52A6 /* bnk_sales_support.xcdatamodeld */,
 			);

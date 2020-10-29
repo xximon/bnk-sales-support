@@ -1,0 +1,14 @@
+//
+//  bnk-sales-support-Prefix.pch
+//  bnk-sales-support
+//
+//  Created by YOUNGRAE SEO on 2020/10/29.
+//
+
+#ifndef bnk_sales_support_Prefix_pch
+#define bnk_sales_support_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* bnk_sales_support_Prefix_pch */
