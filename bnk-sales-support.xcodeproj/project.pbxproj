@@ -8,21 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		243F9BFB254A8672002F52A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 243F9BFA254A8672002F52A6 /* AppDelegate.m */; };
-		243F9BFE254A8672002F52A6 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 243F9BFD254A8672002F52A6 /* SceneDelegate.m */; };
 		243F9C01254A8672002F52A6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 243F9C00254A8672002F52A6 /* ViewController.m */; };
 		243F9C04254A8672002F52A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 243F9C02254A8672002F52A6 /* Main.storyboard */; };
 		243F9C07254A8672002F52A6 /* bnk_sales_support.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 243F9C05254A8672002F52A6 /* bnk_sales_support.xcdatamodeld */; };
 		243F9C09254A8674002F52A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 243F9C08254A8674002F52A6 /* Assets.xcassets */; };
 		243F9C0C254A8674002F52A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 243F9C0A254A8674002F52A6 /* LaunchScreen.storyboard */; };
 		243F9C0F254A8674002F52A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 243F9C0E254A8674002F52A6 /* main.m */; };
+		243F9C20254A9511002F52A6 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 243F9C1E254A9511002F52A6 /* WebViewController.m */; };
+		243F9C21254A9511002F52A6 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 243F9C1F254A9511002F52A6 /* WebViewController.xib */; };
+		247D255C254AA04C00100997 /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 247D255A254AA04C00100997 /* IntroViewController.m */; };
+		247D255D254AA04C00100997 /* IntroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 247D255B254AA04C00100997 /* IntroViewController.xib */; };
+		247D2565254AA1AD00100997 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 247D2563254AA1AD00100997 /* TestViewController.m */; };
+		247D2566254AA1AD00100997 /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 247D2564254AA1AD00100997 /* TestViewController.xib */; };
+		7D2637C501872722B6E52EED /* Pods_bnk_sales_support.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31F9293D9503A3DB19911005 /* Pods_bnk_sales_support.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		181B138813F28461324BFB10 /* Pods-bnk-sales-support.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bnk-sales-support.debug.xcconfig"; path = "Target Support Files/Pods-bnk-sales-support/Pods-bnk-sales-support.debug.xcconfig"; sourceTree = "<group>"; };
 		243F9BF6254A8672002F52A6 /* bnk-sales-support.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bnk-sales-support.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		243F9BF9254A8672002F52A6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		243F9BFA254A8672002F52A6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		243F9BFC254A8672002F52A6 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		243F9BFD254A8672002F52A6 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		243F9BFF254A8672002F52A6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		243F9C00254A8672002F52A6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		243F9C03254A8672002F52A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -31,6 +36,17 @@
 		243F9C0B254A8674002F52A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		243F9C0D254A8674002F52A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		243F9C0E254A8674002F52A6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		243F9C1D254A9511002F52A6 /* WebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		243F9C1E254A9511002F52A6 /* WebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		243F9C1F254A9511002F52A6 /* WebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
+		247D2559254AA04C00100997 /* IntroViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroViewController.h; sourceTree = "<group>"; };
+		247D255A254AA04C00100997 /* IntroViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroViewController.m; sourceTree = "<group>"; };
+		247D255B254AA04C00100997 /* IntroViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IntroViewController.xib; sourceTree = "<group>"; };
+		247D2562254AA1AD00100997 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		247D2563254AA1AD00100997 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		247D2564254AA1AD00100997 /* TestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
+		31F9293D9503A3DB19911005 /* Pods_bnk_sales_support.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bnk_sales_support.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3F725E94013FF4DFA4F149D /* Pods-bnk-sales-support.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bnk-sales-support.release.xcconfig"; path = "Target Support Files/Pods-bnk-sales-support/Pods-bnk-sales-support.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,17 +54,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D2637C501872722B6E52EED /* Pods_bnk_sales_support.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0FAC80EC6EF303A724EE24F6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				31F9293D9503A3DB19911005 /* Pods_bnk_sales_support.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1874400E5F442F83CC29C080 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				181B138813F28461324BFB10 /* Pods-bnk-sales-support.debug.xcconfig */,
+				B3F725E94013FF4DFA4F149D /* Pods-bnk-sales-support.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		243F9BED254A8672002F52A6 = {
 			isa = PBXGroup;
 			children = (
 				243F9BF8254A8672002F52A6 /* bnk-sales-support */,
 				243F9BF7254A8672002F52A6 /* Products */,
+				1874400E5F442F83CC29C080 /* Pods */,
+				0FAC80EC6EF303A724EE24F6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,12 +99,13 @@
 		243F9BF8254A8672002F52A6 /* bnk-sales-support */ = {
 			isa = PBXGroup;
 			children = (
+				243F9C1C254A8B80002F52A6 /* Network */,
+				243F9C1B254A8B73002F52A6 /* Utils */,
+				243F9C1A254A8B67002F52A6 /* ViewModels */,
+				243F9C19254A8B42002F52A6 /* Views */,
+				243F9C18254A8B35002F52A6 /* Models */,
 				243F9BF9254A8672002F52A6 /* AppDelegate.h */,
 				243F9BFA254A8672002F52A6 /* AppDelegate.m */,
-				243F9BFC254A8672002F52A6 /* SceneDelegate.h */,
-				243F9BFD254A8672002F52A6 /* SceneDelegate.m */,
-				243F9BFF254A8672002F52A6 /* ViewController.h */,
-				243F9C00254A8672002F52A6 /* ViewController.m */,
 				243F9C02254A8672002F52A6 /* Main.storyboard */,
 				243F9C08254A8674002F52A6 /* Assets.xcassets */,
 				243F9C0A254A8674002F52A6 /* LaunchScreen.storyboard */,
@@ -79,6 +116,84 @@
 			path = "bnk-sales-support";
 			sourceTree = "<group>";
 		};
+		243F9C18254A8B35002F52A6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		243F9C19254A8B42002F52A6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				247D2561254AA19E00100997 /* Test */,
+				243F9BFF254A8672002F52A6 /* ViewController.h */,
+				243F9C00254A8672002F52A6 /* ViewController.m */,
+				247D2560254AA05700100997 /* Login */,
+				247D2558254AA03A00100997 /* Intro */,
+				247D2557254AA02F00100997 /* WebView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		243F9C1A254A8B67002F52A6 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		243F9C1B254A8B73002F52A6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		243F9C1C254A8B80002F52A6 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		247D2557254AA02F00100997 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				243F9C1D254A9511002F52A6 /* WebViewController.h */,
+				243F9C1E254A9511002F52A6 /* WebViewController.m */,
+				243F9C1F254A9511002F52A6 /* WebViewController.xib */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
+		247D2558254AA03A00100997 /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				247D2559254AA04C00100997 /* IntroViewController.h */,
+				247D255A254AA04C00100997 /* IntroViewController.m */,
+				247D255B254AA04C00100997 /* IntroViewController.xib */,
+			);
+			path = Intro;
+			sourceTree = "<group>";
+		};
+		247D2560254AA05700100997 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		247D2561254AA19E00100997 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				247D2562254AA1AD00100997 /* TestViewController.h */,
+				247D2563254AA1AD00100997 /* TestViewController.m */,
+				247D2564254AA1AD00100997 /* TestViewController.xib */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,6 +201,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 243F9C12254A8674002F52A6 /* Build configuration list for PBXNativeTarget "bnk-sales-support" */;
 			buildPhases = (
+				8775239643F18970A0F731D8 /* [CP] Check Pods Manifest.lock */,
 				243F9BF2254A8672002F52A6 /* Sources */,
 				243F9BF3254A8672002F52A6 /* Frameworks */,
 				243F9BF4254A8672002F52A6 /* Resources */,
@@ -136,12 +252,40 @@
 			buildActionMask = 2147483647;
 			files = (
 				243F9C0C254A8674002F52A6 /* LaunchScreen.storyboard in Resources */,
+				247D255D254AA04C00100997 /* IntroViewController.xib in Resources */,
 				243F9C09254A8674002F52A6 /* Assets.xcassets in Resources */,
 				243F9C04254A8672002F52A6 /* Main.storyboard in Resources */,
+				247D2566254AA1AD00100997 /* TestViewController.xib in Resources */,
+				243F9C21254A9511002F52A6 /* WebViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8775239643F18970A0F731D8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-bnk-sales-support-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		243F9BF2254A8672002F52A6 /* Sources */ = {
@@ -149,10 +293,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				243F9C0F254A8674002F52A6 /* main.m in Sources */,
+				247D255C254AA04C00100997 /* IntroViewController.m in Sources */,
+				247D2565254AA1AD00100997 /* TestViewController.m in Sources */,
+				243F9C20254A9511002F52A6 /* WebViewController.m in Sources */,
 				243F9C07254A8672002F52A6 /* bnk_sales_support.xcdatamodeld in Sources */,
 				243F9C01254A8672002F52A6 /* ViewController.m in Sources */,
 				243F9BFB254A8672002F52A6 /* AppDelegate.m in Sources */,
-				243F9BFE254A8672002F52A6 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,35 +438,39 @@
 		};
 		243F9C13254A8674002F52A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 181B138813F28461324BFB10 /* Pods-bnk-sales-support.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "bnk-sales-support/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ximon.bnk-sales-support";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		243F9C14254A8674002F52A6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3F725E94013FF4DFA4F149D /* Pods-bnk-sales-support.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "bnk-sales-support/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ximon.bnk-sales-support";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

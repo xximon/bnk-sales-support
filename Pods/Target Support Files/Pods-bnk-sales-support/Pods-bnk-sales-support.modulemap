@@ -1,0 +1,6 @@
+framework module Pods_bnk_sales_support {
+  umbrella header "Pods-bnk-sales-support-umbrella.h"
+
+  export *
+  module * { export * }
+}
