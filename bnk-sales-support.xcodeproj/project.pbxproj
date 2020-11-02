@@ -21,6 +21,7 @@
 		247D2565254AA1AD00100997 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 247D2563254AA1AD00100997 /* TestViewController.m */; };
 		247D2566254AA1AD00100997 /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 247D2564254AA1AD00100997 /* TestViewController.xib */; };
 		24BE34F8254FEA750072CFED /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24BE34F7254FEA750072CFED /* NetworkManager.m */; };
+		24BE34FC254FF9170072CFED /* CommonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 24BE34FB254FF9170072CFED /* CommonUtil.m */; };
 		7D2637C501872722B6E52EED /* Pods_bnk_sales_support.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31F9293D9503A3DB19911005 /* Pods_bnk_sales_support.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,8 @@
 		247D256A254ABA9100100997 /* bnk-sales-support-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bnk-sales-support-Prefix.pch"; sourceTree = "<group>"; };
 		24BE34F6254FEA750072CFED /* NetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		24BE34F7254FEA750072CFED /* NetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
+		24BE34FA254FF9170072CFED /* CommonUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonUtil.h; sourceTree = "<group>"; };
+		24BE34FB254FF9170072CFED /* CommonUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommonUtil.m; sourceTree = "<group>"; };
 		31F9293D9503A3DB19911005 /* Pods_bnk_sales_support.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bnk_sales_support.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3F725E94013FF4DFA4F149D /* Pods-bnk-sales-support.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bnk-sales-support.release.xcconfig"; path = "Target Support Files/Pods-bnk-sales-support/Pods-bnk-sales-support.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -151,6 +154,8 @@
 		243F9C1B254A8B73002F52A6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				24BE34FA254FF9170072CFED /* CommonUtil.h */,
+				24BE34FB254FF9170072CFED /* CommonUtil.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -321,6 +326,7 @@
 				243F9C0F254A8674002F52A6 /* main.m in Sources */,
 				247D255C254AA04C00100997 /* IntroViewController.m in Sources */,
 				247D2565254AA1AD00100997 /* TestViewController.m in Sources */,
+				24BE34FC254FF9170072CFED /* CommonUtil.m in Sources */,
 				243F9C20254A9511002F52A6 /* WebViewController.m in Sources */,
 				243F9C07254A8672002F52A6 /* bnk_sales_support.xcdatamodeld in Sources */,
 				243F9C01254A8672002F52A6 /* ViewController.m in Sources */,
