@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,7 @@
 		247D255D254AA04C00100997 /* IntroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 247D255B254AA04C00100997 /* IntroViewController.xib */; };
 		247D2565254AA1AD00100997 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 247D2563254AA1AD00100997 /* TestViewController.m */; };
 		247D2566254AA1AD00100997 /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 247D2564254AA1AD00100997 /* TestViewController.xib */; };
+		24BE34F8254FEA750072CFED /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24BE34F7254FEA750072CFED /* NetworkManager.m */; };
 		7D2637C501872722B6E52EED /* Pods_bnk_sales_support.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31F9293D9503A3DB19911005 /* Pods_bnk_sales_support.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,8 @@
 		247D2563254AA1AD00100997 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		247D2564254AA1AD00100997 /* TestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
 		247D256A254ABA9100100997 /* bnk-sales-support-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bnk-sales-support-Prefix.pch"; sourceTree = "<group>"; };
+		24BE34F6254FEA750072CFED /* NetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		24BE34F7254FEA750072CFED /* NetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 		31F9293D9503A3DB19911005 /* Pods_bnk_sales_support.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bnk_sales_support.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3F725E94013FF4DFA4F149D /* Pods-bnk-sales-support.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bnk-sales-support.release.xcconfig"; path = "Target Support Files/Pods-bnk-sales-support/Pods-bnk-sales-support.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -155,6 +158,8 @@
 		243F9C1C254A8B80002F52A6 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				24BE34F6254FEA750072CFED /* NetworkManager.h */,
+				24BE34F7254FEA750072CFED /* NetworkManager.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -207,6 +212,7 @@
 				243F9BF2254A8672002F52A6 /* Sources */,
 				243F9BF3254A8672002F52A6 /* Frameworks */,
 				243F9BF4254A8672002F52A6 /* Resources */,
+				FA12FB744E223A7024A95C0A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -287,6 +293,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FA12FB744E223A7024A95C0A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-bnk-sales-support/Pods-bnk-sales-support-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-bnk-sales-support/Pods-bnk-sales-support-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-bnk-sales-support/Pods-bnk-sales-support-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -294,6 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24BE34F8254FEA750072CFED /* NetworkManager.m in Sources */,
 				243F9C0F254A8674002F52A6 /* main.m in Sources */,
 				247D255C254AA04C00100997 /* IntroViewController.m in Sources */,
 				247D2565254AA1AD00100997 /* TestViewController.m in Sources */,
@@ -445,6 +469,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = "bnk-sales-support-Prefix.pch";
 				INFOPLIST_FILE = "bnk-sales-support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -464,6 +489,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = "bnk-sales-support-Prefix.pch";
 				INFOPLIST_FILE = "bnk-sales-support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

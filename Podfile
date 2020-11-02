@@ -6,5 +6,11 @@ target 'bnk-sales-support' do
   use_frameworks!
 
   # Pods for bnk-sales-support
-
+  
+  # HTTP 네트워크 통신 모듈 라이브러리
+  pod 'AFNetworking'
+  # MVVM 에서 ViewModel과 View를 바인딩 해주는 라이브러리
+  pod 'ReactiveCocoa'
+  
+  
 end

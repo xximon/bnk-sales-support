@@ -1,3 +1,38 @@
-PODFILE CHECKSUM: 685cca2aa94fb81169e438eb28f5e3d1586ead3c
+PODS:
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
+    - AFNetworking/NSURLSession
+  - ReactiveCocoa (11.1.0):
+    - ReactiveSwift (~> 6.2)
+  - ReactiveSwift (6.5.0)
+
+DEPENDENCIES:
+  - AFNetworking
+  - ReactiveCocoa
+
+SPEC REPOS:
+  trunk:
+    - AFNetworking
+    - ReactiveCocoa
+    - ReactiveSwift
+
+SPEC CHECKSUMS:
+  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  ReactiveCocoa: 7bc87ad2d361b9de141278b1950edd7fe91b15b1
+  ReactiveSwift: 8d159904084e908856cde90b2e28823f3c7e485f
+
+PODFILE CHECKSUM: 2b037af95be963326fb58efe74141c3a4ffa2b73
 
 COCOAPODS: 1.9.3
