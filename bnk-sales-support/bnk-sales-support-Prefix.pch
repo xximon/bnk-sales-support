@@ -18,19 +18,26 @@
 #import "NetworkManager.h"
 
 
+#define SCREEN_BOUNDS        [[UIScreen mainScreen] bounds]
+#define SCREEN_WIDTH         ([[UIScreen mainScreen] bounds].size.width)
+#define SCREEN_HEIGHT        ([[UIScreen mainScreen] bounds].size.height)
+#define SCREEN_MAX_LENGTH    (MAX(SCREEN_WIDTH, SCREEN_HEIGHT))
+#define SCREEN_MIN_LENGTH    (MIN(SCREEN_WIDTH, SCREEN_HEIGHT))
+
 /* ----------------------------------------- [START]빌드 형태 분기 --------------------------------------------- */
 
 /* 개발 */
 #ifdef DEBUG
 
 //#define SERVER_URL                           @"https://localhost:8080"         // 개발서버
+#define SERVER_URL                           @"http://192.168.128.155:8080"         // 개발서버
 
 #define NSLog( s, ... ) NSLog( @"<%p %@:(%d)> %@", self, [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] ) // 개발 경우만 로그 출력
 
 #else
 /* 운영 */
 
-//#define SERVER_URL                             @"https://bnkclass.bnksys.co.kr"         // 개발서버
+#define SERVER_URL                             @"https://bnkclass.bnksys.co.kr"         // 개발서버
 
 #define NSLog( s, ... )                                                                 // 운영 로그 출력 x
 #endif
@@ -39,3 +46,6 @@
 #endif /* bnk_sales_support_Prefix_pch */
 
 /* ----------------------------------------- [END]빌드 형태 분기 --------------------------------------------- */
+
+#define API                           @"/api"
+#define INIT_DATA                     @"/initialize"

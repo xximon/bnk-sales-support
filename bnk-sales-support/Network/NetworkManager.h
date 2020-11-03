@@ -27,6 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)post:(NSString *_Nullable)url
   parameters:(NSDictionary *_Nullable)parameters
+     headers:(nullable NSDictionary<NSString *,NSString *> *)headers
     complete:(void (^_Nullable)(id _Nullable responseObj, NSURLResponse * _Nonnull response))complete
         fail:(void (^_Nullable)(NSError * _Nullable error))fail;
 

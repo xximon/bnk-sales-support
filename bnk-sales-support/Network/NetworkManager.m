@@ -31,7 +31,7 @@
 - (void)get:(NSString *)url
  parameters:(nullable id)params
     headers:(nullable NSDictionary<NSString *,NSString *> *)headers
-   complete:(void (^)(id responseObj))complete
+   complete:(void (^)(id responseObj, NSURLResponse * _Nonnull response))complete
        fail:(void (^)(NSError *error))fail {
     
     if (url == nil || url.length < 1) {
@@ -63,7 +63,7 @@
             responseObject = obj;
         }
         
-        complete(responseObject);
+        complete(responseObject, nil);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"=== Error: %@", error);
         fail(error);
@@ -81,10 +81,45 @@
  */
 #pragma mark - POST request
 - (void)post:(NSString *)url
-  parameters:(NSDictionary *)parameters
+  parameters:(NSDictionary *)params
+     headers:(nullable NSDictionary<NSString *,NSString *> *)headers
     complete:(void (^)(id responseObj, NSURLResponse * _Nonnull response))complete
         fail:(void (^)(NSError *error))fail {
     
+    if (url == nil || url.length < 1) {
+        NSError *error = [self setError:@"URL is nil"];
+        NSLog(@"=== Error: %@", error);
+        fail(error);
+        return;
+    }
+    
+    NSLog(@"=== url: %@", url);
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    
+    AFJSONResponseSerializer *serializer = [AFJSONResponseSerializer serializer];
+    [serializer setRemovesKeysWithNullValues:YES];
+    [manager setResponseSerializer:serializer];
+    
+    [manager POST:url
+      parameters:params
+         headers:headers
+        progress:nil
+         success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable obj) {
+        
+        NSMutableDictionary *responseObject = nil;
+        if ([obj isKindOfClass:[NSDictionary class]]) {
+            responseObject = [obj mutableCopy];
+//            [responseObject setValue:[NSString stringWithFormat:@"%f", executionTime] forKey:@"executionTime"];
+        }else {
+            responseObject = obj;
+        }
+        
+        complete(responseObject, nil);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"=== Error: %@", error);
+        fail(error);
+    }];
     
 }
 
