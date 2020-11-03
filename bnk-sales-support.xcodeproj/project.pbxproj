@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2417D1B725513CA80083AAF3 /* SideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2417D1B525513CA80083AAF3 /* SideMenuViewController.m */; };
+		2417D1B825513CA80083AAF3 /* SideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2417D1B625513CA80083AAF3 /* SideMenuViewController.xib */; };
 		243F9BFB254A8672002F52A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 243F9BFA254A8672002F52A6 /* AppDelegate.m */; };
 		243F9C01254A8672002F52A6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 243F9C00254A8672002F52A6 /* ViewController.m */; };
 		243F9C04254A8672002F52A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 243F9C02254A8672002F52A6 /* Main.storyboard */; };
@@ -27,6 +29,9 @@
 
 /* Begin PBXFileReference section */
 		181B138813F28461324BFB10 /* Pods-bnk-sales-support.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bnk-sales-support.debug.xcconfig"; path = "Target Support Files/Pods-bnk-sales-support/Pods-bnk-sales-support.debug.xcconfig"; sourceTree = "<group>"; };
+		2417D1B425513CA80083AAF3 /* SideMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SideMenuViewController.h; sourceTree = "<group>"; };
+		2417D1B525513CA80083AAF3 /* SideMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SideMenuViewController.m; sourceTree = "<group>"; };
+		2417D1B625513CA80083AAF3 /* SideMenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuViewController.xib; sourceTree = "<group>"; };
 		243F9BF6254A8672002F52A6 /* bnk-sales-support.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bnk-sales-support.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		243F9BF9254A8672002F52A6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		243F9BFA254A8672002F52A6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -85,6 +90,24 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		2417D1B325513C880083AAF3 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				2417D1BC25513E0A0083AAF3 /* Cell */,
+				2417D1B425513CA80083AAF3 /* SideMenuViewController.h */,
+				2417D1B525513CA80083AAF3 /* SideMenuViewController.m */,
+				2417D1B625513CA80083AAF3 /* SideMenuViewController.xib */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		2417D1BC25513E0A0083AAF3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		243F9BED254A8672002F52A6 = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +157,7 @@
 		243F9C19254A8B42002F52A6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2417D1B325513C880083AAF3 /* SideMenu */,
 				247D2561254AA19E00100997 /* Test */,
 				243F9BFF254A8672002F52A6 /* ViewController.h */,
 				243F9C00254A8672002F52A6 /* ViewController.m */,
@@ -267,6 +291,7 @@
 				243F9C0C254A8674002F52A6 /* LaunchScreen.storyboard in Resources */,
 				247D255D254AA04C00100997 /* IntroViewController.xib in Resources */,
 				243F9C09254A8674002F52A6 /* Assets.xcassets in Resources */,
+				2417D1B825513CA80083AAF3 /* SideMenuViewController.xib in Resources */,
 				243F9C04254A8672002F52A6 /* Main.storyboard in Resources */,
 				247D2566254AA1AD00100997 /* TestViewController.xib in Resources */,
 				243F9C21254A9511002F52A6 /* WebViewController.xib in Resources */,
@@ -322,6 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2417D1B725513CA80083AAF3 /* SideMenuViewController.m in Sources */,
 				24BE34F8254FEA750072CFED /* NetworkManager.m in Sources */,
 				243F9C0F254A8674002F52A6 /* main.m in Sources */,
 				247D255C254AA04C00100997 /* IntroViewController.m in Sources */,

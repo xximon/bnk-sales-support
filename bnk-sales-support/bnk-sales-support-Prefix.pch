@@ -18,14 +18,14 @@
 #import "NetworkManager.h"
 
 
-/* ----------------------------------------------- 빌드 형태 분기 ---------------------------------------------------*/
+/* ----------------------------------------- [START]빌드 형태 분기 --------------------------------------------- */
 
 /* 개발 */
 #ifdef DEBUG
 
 //#define SERVER_URL                           @"https://localhost:8080"         // 개발서버
 
-#define NSLog( s, ... ) NSLog( @"<%p %@:(%d)> %@", self, [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )                                            // 개발 경우만 로그 출력
+#define NSLog( s, ... ) NSLog( @"<%p %@:(%d)> %@", self, [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] ) // 개발 경우만 로그 출력
 
 #else
 /* 운영 */
@@ -37,3 +37,5 @@
 
 
 #endif /* bnk_sales_support_Prefix_pch */
+
+/* ----------------------------------------- [END]빌드 형태 분기 --------------------------------------------- */
