@@ -11,6 +11,9 @@
 		2417D1B825513CA80083AAF3 /* SideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2417D1B625513CA80083AAF3 /* SideMenuViewController.xib */; };
 		2433F1EF2552284E00A61946 /* SideMenuContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2433F1ED2552284E00A61946 /* SideMenuContentCell.m */; };
 		2433F1F02552284E00A61946 /* SideMenuContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2433F1EE2552284E00A61946 /* SideMenuContentCell.xib */; };
+		2433F1F4255239B600A61946 /* AdminMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2433F1F3255239B600A61946 /* AdminMenuItem.m */; };
+		2433F1F8255239CE00A61946 /* ProjectManagementItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2433F1F7255239CE00A61946 /* ProjectManagementItem.m */; };
+		2433F20125524C5700A61946 /* InitData.json in Resources */ = {isa = PBXBuildFile; fileRef = 2433F20025524C5700A61946 /* InitData.json */; };
 		243F9BFB254A8672002F52A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 243F9BFA254A8672002F52A6 /* AppDelegate.m */; };
 		243F9C01254A8672002F52A6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 243F9C00254A8672002F52A6 /* ViewController.m */; };
 		243F9C04254A8672002F52A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 243F9C02254A8672002F52A6 /* Main.storyboard */; };
@@ -37,6 +40,11 @@
 		2433F1EC2552284E00A61946 /* SideMenuContentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SideMenuContentCell.h; sourceTree = "<group>"; };
 		2433F1ED2552284E00A61946 /* SideMenuContentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SideMenuContentCell.m; sourceTree = "<group>"; };
 		2433F1EE2552284E00A61946 /* SideMenuContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuContentCell.xib; sourceTree = "<group>"; };
+		2433F1F2255239B600A61946 /* AdminMenuItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdminMenuItem.h; sourceTree = "<group>"; };
+		2433F1F3255239B600A61946 /* AdminMenuItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdminMenuItem.m; sourceTree = "<group>"; };
+		2433F1F6255239CE00A61946 /* ProjectManagementItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectManagementItem.h; sourceTree = "<group>"; };
+		2433F1F7255239CE00A61946 /* ProjectManagementItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectManagementItem.m; sourceTree = "<group>"; };
+		2433F20025524C5700A61946 /* InitData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = InitData.json; path = ../../../../../Downloads/InitData.json; sourceTree = "<group>"; };
 		243F9BF6254A8672002F52A6 /* bnk-sales-support.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bnk-sales-support.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		243F9BF9254A8672002F52A6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		243F9BFA254A8672002F52A6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -116,6 +124,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		2433F1FF25524C2800A61946 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				2433F20025524C5700A61946 /* InitData.json */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		243F9BED254A8672002F52A6 = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +153,7 @@
 		243F9BF8254A8672002F52A6 /* bnk-sales-support */ = {
 			isa = PBXGroup;
 			children = (
+				2433F1FF25524C2800A61946 /* Test */,
 				243F9C1C254A8B80002F52A6 /* Network */,
 				243F9C1B254A8B73002F52A6 /* Utils */,
 				243F9C1A254A8B67002F52A6 /* ViewModels */,
@@ -158,6 +175,10 @@
 		243F9C18254A8B35002F52A6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2433F1F2255239B600A61946 /* AdminMenuItem.h */,
+				2433F1F3255239B600A61946 /* AdminMenuItem.m */,
+				2433F1F6255239CE00A61946 /* ProjectManagementItem.h */,
+				2433F1F7255239CE00A61946 /* ProjectManagementItem.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -304,6 +325,7 @@
 				2433F1F02552284E00A61946 /* SideMenuContentCell.xib in Resources */,
 				247D2566254AA1AD00100997 /* TestViewController.xib in Resources */,
 				243F9C21254A9511002F52A6 /* WebViewController.xib in Resources */,
+				2433F20125524C5700A61946 /* InitData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,11 +380,13 @@
 			files = (
 				2417D1B725513CA80083AAF3 /* SideMenuViewController.m in Sources */,
 				24BE34F8254FEA750072CFED /* NetworkManager.m in Sources */,
+				2433F1F8255239CE00A61946 /* ProjectManagementItem.m in Sources */,
 				243F9C0F254A8674002F52A6 /* main.m in Sources */,
 				2433F1EF2552284E00A61946 /* SideMenuContentCell.m in Sources */,
 				247D255C254AA04C00100997 /* IntroViewController.m in Sources */,
 				247D2565254AA1AD00100997 /* TestViewController.m in Sources */,
 				24BE34FC254FF9170072CFED /* CommonUtil.m in Sources */,
+				2433F1F4255239B600A61946 /* AdminMenuItem.m in Sources */,
 				243F9C20254A9511002F52A6 /* WebViewController.m in Sources */,
 				243F9C07254A8672002F52A6 /* bnk_sales_support.xcdatamodeld in Sources */,
 				243F9C01254A8672002F52A6 /* ViewController.m in Sources */,
