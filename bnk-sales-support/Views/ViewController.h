@@ -7,8 +7,11 @@
 
 #import <UIKit/UIKit.h>
 
+#import "SideMenuViewController.h"
+
 @interface ViewController : UIViewController
 
+@property(strong,atomic) SideMenuViewController *sideMenuViewController;
 
 @end
 

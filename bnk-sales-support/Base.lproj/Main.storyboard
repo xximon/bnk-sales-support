@@ -16,8 +16,32 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Sc-Vp-3sv">
+                                <rect key="frame" x="172" y="430" width="70" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="메뉴표시"/>
+                                <connections>
+                                    <action selector="onClickBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j5Y-TR-Cq5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XFU-KD-hEO">
+                                <rect key="frame" x="172" y="374" width="70" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="웹뷰전환"/>
+                                <connections>
+                                    <action selector="onClickBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eYm-3f-ies"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7Sc-Vp-3sv" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="DxF-Ch-wvR"/>
+                            <constraint firstItem="XFU-KD-hEO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VK8-H7-A5A"/>
+                            <constraint firstItem="7Sc-Vp-3sv" firstAttribute="top" secondItem="XFU-KD-hEO" secondAttribute="bottom" constant="20" id="p9r-tf-ZcM"/>
+                            <constraint firstItem="7Sc-Vp-3sv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="szV-HB-66Q"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
