@@ -6,6 +6,7 @@
 //
 
 #import "ViewController.h"
+#import "WebViewController.h"
 
 #import "AdminMenuItem.h"
 #import "ProjectManagementItem.h"
@@ -40,6 +41,9 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showMenu) name:@"SHOW_MENU" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(closeMenu) name:@"CLOSE_MENU" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(closeMenuNoAnimation) name:@"CLOSE_MENU_NO_ANIMATION" object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showWebView) name:@"SHOW_WEBVIEW" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(closeWebView) name:@"CLOSE_WEBVIEW" object:nil];
 }
 
 // 초기데이터 요청 및 수신
@@ -113,6 +117,7 @@
     if([sender tag] == 1){
         // 웹뷰전환
         NSLog(@" === 웹뷰전환 버튼 클릭");
+        SHOW_WEBVIEW;
     }else if([sender tag] == 2){
         // 메뉴표시
 //        SHOW_MENU;
@@ -203,6 +208,21 @@
     }
     
     [self.view layoutIfNeeded];
+}
+
+
+#pragma mark - 웹뷰
+
+-(void)showWebView {
+    WebViewController *webVC = [[WebViewController alloc] initWithNibName:@"WebViewController" bundle:nil];
+    UINavigationController *navCtrl = [[UINavigationController alloc] initWithRootViewController:webVC];
+    navCtrl.modalPresentationStyle = UIModalPresentationFullScreen;
+    navCtrl.navigationBar.hidden = YES;
+    [self presentViewController:navCtrl animated:NO completion:nil];
+}
+
+-(void)closeWebView {
+    
 }
 
 @end

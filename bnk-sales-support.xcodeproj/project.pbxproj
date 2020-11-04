@@ -13,7 +13,9 @@
 		2433F1F02552284E00A61946 /* SideMenuContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2433F1EE2552284E00A61946 /* SideMenuContentCell.xib */; };
 		2433F1F4255239B600A61946 /* AdminMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2433F1F3255239B600A61946 /* AdminMenuItem.m */; };
 		2433F1F8255239CE00A61946 /* ProjectManagementItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2433F1F7255239CE00A61946 /* ProjectManagementItem.m */; };
-		2433F20125524C5700A61946 /* InitData.json in Resources */ = {isa = PBXBuildFile; fileRef = 2433F20025524C5700A61946 /* InitData.json */; };
+		2433F206255290A000A61946 /* ExternalWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2433F204255290A000A61946 /* ExternalWebViewController.m */; };
+		2433F207255290A000A61946 /* ExternalWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2433F205255290A000A61946 /* ExternalWebViewController.xib */; };
+		2433F20A2552972600A61946 /* InitData.json in Resources */ = {isa = PBXBuildFile; fileRef = 2433F2092552972600A61946 /* InitData.json */; };
 		243F9BFB254A8672002F52A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 243F9BFA254A8672002F52A6 /* AppDelegate.m */; };
 		243F9C01254A8672002F52A6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 243F9C00254A8672002F52A6 /* ViewController.m */; };
 		243F9C04254A8672002F52A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 243F9C02254A8672002F52A6 /* Main.storyboard */; };
@@ -44,7 +46,10 @@
 		2433F1F3255239B600A61946 /* AdminMenuItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdminMenuItem.m; sourceTree = "<group>"; };
 		2433F1F6255239CE00A61946 /* ProjectManagementItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectManagementItem.h; sourceTree = "<group>"; };
 		2433F1F7255239CE00A61946 /* ProjectManagementItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectManagementItem.m; sourceTree = "<group>"; };
-		2433F20025524C5700A61946 /* InitData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = InitData.json; path = ../../../../../Downloads/InitData.json; sourceTree = "<group>"; };
+		2433F203255290A000A61946 /* ExternalWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExternalWebViewController.h; sourceTree = "<group>"; };
+		2433F204255290A000A61946 /* ExternalWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExternalWebViewController.m; sourceTree = "<group>"; };
+		2433F205255290A000A61946 /* ExternalWebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExternalWebViewController.xib; sourceTree = "<group>"; };
+		2433F2092552972600A61946 /* InitData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = InitData.json; path = "../../../../../프로젝트관련문서/모바일영업지원/InitData.json"; sourceTree = "<group>"; };
 		243F9BF6254A8672002F52A6 /* bnk-sales-support.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bnk-sales-support.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		243F9BF9254A8672002F52A6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		243F9BFA254A8672002F52A6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -127,7 +132,7 @@
 		2433F1FF25524C2800A61946 /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				2433F20025524C5700A61946 /* InitData.json */,
+				2433F2092552972600A61946 /* InitData.json */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -228,6 +233,9 @@
 				243F9C1D254A9511002F52A6 /* WebViewController.h */,
 				243F9C1E254A9511002F52A6 /* WebViewController.m */,
 				243F9C1F254A9511002F52A6 /* WebViewController.xib */,
+				2433F203255290A000A61946 /* ExternalWebViewController.h */,
+				2433F204255290A000A61946 /* ExternalWebViewController.m */,
+				2433F205255290A000A61946 /* ExternalWebViewController.xib */,
 			);
 			path = WebView;
 			sourceTree = "<group>";
@@ -318,14 +326,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				243F9C0C254A8674002F52A6 /* LaunchScreen.storyboard in Resources */,
+				2433F20A2552972600A61946 /* InitData.json in Resources */,
 				247D255D254AA04C00100997 /* IntroViewController.xib in Resources */,
 				243F9C09254A8674002F52A6 /* Assets.xcassets in Resources */,
 				2417D1B825513CA80083AAF3 /* SideMenuViewController.xib in Resources */,
+				2433F207255290A000A61946 /* ExternalWebViewController.xib in Resources */,
 				243F9C04254A8672002F52A6 /* Main.storyboard in Resources */,
 				2433F1F02552284E00A61946 /* SideMenuContentCell.xib in Resources */,
 				247D2566254AA1AD00100997 /* TestViewController.xib in Resources */,
 				243F9C21254A9511002F52A6 /* WebViewController.xib in Resources */,
-				2433F20125524C5700A61946 /* InitData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +393,7 @@
 				243F9C0F254A8674002F52A6 /* main.m in Sources */,
 				2433F1EF2552284E00A61946 /* SideMenuContentCell.m in Sources */,
 				247D255C254AA04C00100997 /* IntroViewController.m in Sources */,
+				2433F206255290A000A61946 /* ExternalWebViewController.m in Sources */,
 				247D2565254AA1AD00100997 /* TestViewController.m in Sources */,
 				24BE34FC254FF9170072CFED /* CommonUtil.m in Sources */,
 				2433F1F4255239B600A61946 /* AdminMenuItem.m in Sources */,
@@ -534,7 +544,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/bnk-sales-support-Prefix.pch";
 				INFOPLIST_FILE = "bnk-sales-support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -544,6 +555,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ximon.bnk-sales-support";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -554,7 +566,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/bnk-sales-support-Prefix.pch";
 				INFOPLIST_FILE = "bnk-sales-support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -564,6 +577,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ximon.bnk-sales-support";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

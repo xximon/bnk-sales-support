@@ -12,5 +12,7 @@ target 'bnk-sales-support' do
   # MVVM 에서 ViewModel과 View를 바인딩 해주는 라이브러리
   pod 'ReactiveCocoa'
   
+  # SDWebImage
+  pod 'SDWebImage'
   
 end

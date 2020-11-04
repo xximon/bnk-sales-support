@@ -62,12 +62,25 @@
 
 /* ----------------------------------------- [START] Notifications --------------------------------------------- */
 
+// 1. MENU
 //메뉴 열고 닫기, 토글
 #define  SHOW_MENU                   [[NSNotificationCenter defaultCenter] postNotificationName:@"SHOW_MENU" object:nil];
 //메뉴 닫기
 #define  CLOSE_MENU                  [[NSNotificationCenter defaultCenter] postNotificationName:@"CLOSE_MENU" object:nil];
 //메뉴 닫기 애니메이션 없음
 #define  CLOSE_MENU_NO_ANIMATION     [[NSNotificationCenter defaultCenter] postNotificationName:@"CLOSE_MENU_NO_ANIMATION" object:nil];
+
+// 2. WEBVIEW
+//웹뷰 열기
+#define  SHOW_WEBVIEW                   [[NSNotificationCenter defaultCenter] postNotificationName:@"SHOW_WEBVIEW" object:nil];
+//웹뷰 닫기
+#define  CLOSE_WEBVIEW                  [[NSNotificationCenter defaultCenter] postNotificationName:@"CLOSE_WEBVIEW" object:nil];
+//그룹웨어 웹뷰 열기
+#define  SHOW_EXT_WEBVIEW                   [[NSNotificationCenter defaultCenter] postNotificationName:@"SHOW_EXT_WEBVIEW" object:nil];
+//그룹웨어 웹뷰 닫기
+#define  CLOSE_EXT_WEBVIEW                  [[NSNotificationCenter defaultCenter] postNotificationName:@"CLOSE_EXT_WEBVIEW" object:nil];
+
+
 
 /* ----------------------------------------- [END] Notifications --------------------------------------------- */
 

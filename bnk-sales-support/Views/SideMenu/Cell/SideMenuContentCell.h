@@ -12,8 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SideMenuContentCell : UITableViewCell
 
 //MARK: properties
-@property (strong, nonatomic) IBOutlet UILabel *lblTitle;
-@property (strong, nonatomic) IBOutlet UIImageView *ivArrowRight;
+@property (weak, nonatomic) IBOutlet UILabel *lblTitle;
+@property (weak, nonatomic) IBOutlet UIImageView *ivArrowRight;
 
 @end
 
