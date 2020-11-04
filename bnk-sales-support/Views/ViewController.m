@@ -7,7 +7,13 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+#import "AdminMenuItem.h"
+#import "ProjectManagementItem.h"
+
+@interface ViewController (){
+    NSMutableArray *arrAdminMenuItem;
+    NSDictionary *dictProjectManagementItem;
+}
 
 @end
 
@@ -36,6 +42,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(closeMenuNoAnimation) name:@"CLOSE_MENU_NO_ANIMATION" object:nil];
 }
 
+// 초기데이터 요청 및 수신
 -(void)getInitData {
     
     NSDictionary *param = @{
@@ -43,15 +50,60 @@
         @"userId"  : @"9999999",
         @"password": @"aa12345^"
     };
-    [[NetworkManager sharedInstance]post:[NSString stringWithFormat:@"%@%@%@", SERVER_URL,API,INIT_DATA]                                 parameters:param
-                                headers:nil
-                                complete:^(id  _Nullable responseObj, NSURLResponse * _Nonnull response) {
-        NSLog(@"=== [SUCCESS]response:: %@",responseObj);
-    }
-                                    fail:^(NSError * _Nullable error) {
-        NSLog(@"=== [ERROR]response:: %@",error.localizedDescription);
+    
+//    [[NetworkManager sharedInstance]post:[NSString stringWithFormat:@"%@%@%@", SERVER_URL,API,INIT_DATA]                                 parameters:param
+//                                headers:nil
+//                                complete:^(id  _Nullable responseObj, NSURLResponse * _Nonnull response) {
+//
+//
+//        NSLog(@"=== [SUCCESS]response:: %@",responseObj);
+//
+//
+//    }
+//                                    fail:^(NSError * _Nullable error) {
+//        NSLog(@"=== [ERROR]response:: %@",error.localizedDescription);
+//
+//        [self getLocalJsonData];
+//
+//    }];
+    [self getLocalJsonData];
+}
+
+// 로컬 JSON 초기데이터 파싱
+-(void)getLocalJsonData{
+    NSLog(@"=== [LOCAL] JSON 초기 데이터 로딩");
+    NSLog(@"===");
+    NSLog(@"===");
+
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"InitData" ofType:@"json"];
+    NSString *myJSON = [[NSString alloc] initWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:NULL];
+    
+    NSError *err =  nil;
+    
+    NSDictionary *dictInitData = [[NSDictionary alloc]init];
+    dictInitData = [NSJSONSerialization JSONObjectWithData:[myJSON dataUsingEncoding:NSUTF8StringEncoding] options:nil error:&err];
+    
+    [[NSUserDefaults standardUserDefaults]setObject:myJSON forKey:INITDATA_KEY];
+    
+    NSArray *jsonDataArray = [[NSArray alloc]init];
+    jsonDataArray = dictInitData[@"menus"][0][@"children"];
+    
+    NSDictionary *dictItem = [[NSDictionary alloc]init];
+    arrAdminMenuItem = [[NSMutableArray alloc]init];
+    dictProjectManagementItem = [[NSDictionary alloc]init];
+    dictProjectManagementItem = dictInitData[@"menus"][1];
+
+    for(int i=0; i<[jsonDataArray count];i++){
+        AdminMenuItem *adminMenuItem = [AdminMenuItem alloc];
         
-    }];
+        dictItem = [jsonDataArray objectAtIndex:i];
+        [adminMenuItem initWithJSON:dictItem];
+        [arrAdminMenuItem addObject:adminMenuItem];
+    }
+    ProjectManagementItem *projectManagementItem = [[ProjectManagementItem alloc]initWithJSON:dictProjectManagementItem];
+    NSLog(@"=== 초기데이터 관리자메뉴 수신 ===");
+    NSLog(@"=== AdminMenuItems: %@",arrAdminMenuItem);
+    NSLog(@"=== ProjectManagementItems: %@",projectManagementItem);
 }
 
 

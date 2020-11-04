@@ -7,7 +7,14 @@
 
 #import "SideMenuViewController.h"
 
-@interface SideMenuViewController ()
+#import "SideMenuContentCell.h"
+
+@interface SideMenuViewController (){
+    int menuBtnDvcd; // 1: 관리자메뉴 , 2: 프로젝트관리
+    
+    NSMutableArray *arrMenuItems;
+    NSDictionary *dictProjMng;
+}
 
 @end
 
@@ -21,20 +28,46 @@
     [self initListener];
 }
 
--(void)initView{
+-(void)initView {
+    
+    [self.tvMenu registerNib:[UINib nibWithNibName:@"SideMenuContentCell" bundle:nil] forCellReuseIdentifier:@"side_menu_content_cell"];
+    
+    self.tvMenu.dataSource = self;
+    self.tvMenu.delegate = self;
+    
+//    [self setItems];
+}
+
+-(void)initListener {
     
 }
--(void)initListener{
+
+-(void)setItems:(NSInteger)tag {
+    NSDictionary *data = [[NSDictionary alloc]init];
+    NSString *strJSON = [[NSUserDefaults standardUserDefaults]objectForKey:INITDATA_KEY];
     
+    NSError *err =  nil;
+    
+    data = [NSJSONSerialization JSONObjectWithData:[strJSON dataUsingEncoding:NSUTF8StringEncoding] options:nil error:&err];
+    
+    if(tag == 1){
+        arrMenuItems = data[@"menus"][0][@"children"];
+    }else{
+        dictProjMng = data[@"menus"][1];
+    }
 }
 
 #pragma mark - IBAction
 - (IBAction)onClickBtn:(id)sender {
     if([sender tag] == 1){
         NSLog(@"=== 관리자메뉴 클릭");
+        menuBtnDvcd = 1;
     }else if([sender tag] == 2){
         NSLog(@"=== 프로젝트관리 클릭");
+        menuBtnDvcd = 2;
     }
+    [self setItems:[sender tag]];
+    [self.tvMenu reloadData];
 }
 
 //스와이프, 탭 제스쳐
@@ -51,12 +84,36 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
-    //return arrOnlineClass.count
+    if(menuBtnDvcd == 1){
+        if(arrMenuItems.count<1){
+            return 1;
+        }else{
+            return arrMenuItems.count;
+        }
+    }else{
+        return 1;
+//        return dictProjMng.count;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return nil;
+    
+    SideMenuContentCell *cell = [tableView dequeueReusableCellWithIdentifier:@"side_menu_content_cell" forIndexPath:indexPath];
+    
+    
+    if(menuBtnDvcd == 1){
+        if (arrMenuItems != nil && arrMenuItems.count > 0) {
+            NSDictionary *dict = arrMenuItems[indexPath.row];
+            cell.lblTitle.text = dict[@"title"];
+        }else{
+            cell.lblTitle.text = nil;
+        }
+    }else if(menuBtnDvcd == 2){
+        NSDictionary *dict = dictProjMng;
+        cell.lblTitle.text=dict[@"title"];
+    }
+
+    return cell;
 }
 
 //MARK: Delegate
