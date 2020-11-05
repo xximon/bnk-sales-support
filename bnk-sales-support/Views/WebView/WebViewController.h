@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface WebViewController : UIViewController <WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler>
 
 //MARK: properties
-@property (weak, nonatomic) WKWebView *webView;
+@property (strong, nonatomic) WKWebView *webView;
 
 @end
 

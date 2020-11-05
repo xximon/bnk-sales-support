@@ -1,17 +1,17 @@
 //
-//  ExternalWebViewController.m
+//  SubWebViewController.m
 //  bnk-sales-support
 //
-//  Created by YOUNGRAE SEO on 2020/11/04.
+//  Created by YOUNGRAE SEO on 2020/11/05.
 //
 
-#import "ExternalWebViewController.h"
+#import "SubWebViewController.h"
 
-@interface ExternalWebViewController ()
+@interface SubWebViewController ()
 
 @end
 
-@implementation ExternalWebViewController
+@implementation SubWebViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

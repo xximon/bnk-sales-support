@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24120E82255396940028DC38 /* SubWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24120E80255396940028DC38 /* SubWebViewController.m */; };
+		24120E83255396940028DC38 /* SubWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24120E81255396940028DC38 /* SubWebViewController.xib */; };
 		2417D1B725513CA80083AAF3 /* SideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2417D1B525513CA80083AAF3 /* SideMenuViewController.m */; };
 		2417D1B825513CA80083AAF3 /* SideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2417D1B625513CA80083AAF3 /* SideMenuViewController.xib */; };
 		2433F1EF2552284E00A61946 /* SideMenuContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2433F1ED2552284E00A61946 /* SideMenuContentCell.m */; };
 		2433F1F02552284E00A61946 /* SideMenuContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2433F1EE2552284E00A61946 /* SideMenuContentCell.xib */; };
 		2433F1F4255239B600A61946 /* AdminMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2433F1F3255239B600A61946 /* AdminMenuItem.m */; };
 		2433F1F8255239CE00A61946 /* ProjectManagementItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2433F1F7255239CE00A61946 /* ProjectManagementItem.m */; };
-		2433F206255290A000A61946 /* ExternalWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2433F204255290A000A61946 /* ExternalWebViewController.m */; };
-		2433F207255290A000A61946 /* ExternalWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2433F205255290A000A61946 /* ExternalWebViewController.xib */; };
 		2433F20A2552972600A61946 /* InitData.json in Resources */ = {isa = PBXBuildFile; fileRef = 2433F2092552972600A61946 /* InitData.json */; };
 		243F9BFB254A8672002F52A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 243F9BFA254A8672002F52A6 /* AppDelegate.m */; };
 		243F9C01254A8672002F52A6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 243F9C00254A8672002F52A6 /* ViewController.m */; };
@@ -36,6 +36,9 @@
 
 /* Begin PBXFileReference section */
 		181B138813F28461324BFB10 /* Pods-bnk-sales-support.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bnk-sales-support.debug.xcconfig"; path = "Target Support Files/Pods-bnk-sales-support/Pods-bnk-sales-support.debug.xcconfig"; sourceTree = "<group>"; };
+		24120E7F255396940028DC38 /* SubWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubWebViewController.h; sourceTree = "<group>"; };
+		24120E80255396940028DC38 /* SubWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubWebViewController.m; sourceTree = "<group>"; };
+		24120E81255396940028DC38 /* SubWebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubWebViewController.xib; sourceTree = "<group>"; };
 		2417D1B425513CA80083AAF3 /* SideMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SideMenuViewController.h; sourceTree = "<group>"; };
 		2417D1B525513CA80083AAF3 /* SideMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SideMenuViewController.m; sourceTree = "<group>"; };
 		2417D1B625513CA80083AAF3 /* SideMenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuViewController.xib; sourceTree = "<group>"; };
@@ -46,9 +49,6 @@
 		2433F1F3255239B600A61946 /* AdminMenuItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdminMenuItem.m; sourceTree = "<group>"; };
 		2433F1F6255239CE00A61946 /* ProjectManagementItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectManagementItem.h; sourceTree = "<group>"; };
 		2433F1F7255239CE00A61946 /* ProjectManagementItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectManagementItem.m; sourceTree = "<group>"; };
-		2433F203255290A000A61946 /* ExternalWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExternalWebViewController.h; sourceTree = "<group>"; };
-		2433F204255290A000A61946 /* ExternalWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExternalWebViewController.m; sourceTree = "<group>"; };
-		2433F205255290A000A61946 /* ExternalWebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExternalWebViewController.xib; sourceTree = "<group>"; };
 		2433F2092552972600A61946 /* InitData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = InitData.json; path = "../../../../../프로젝트관련문서/모바일영업지원/InitData.json"; sourceTree = "<group>"; };
 		243F9BF6254A8672002F52A6 /* bnk-sales-support.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bnk-sales-support.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		243F9BF9254A8672002F52A6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -233,9 +233,9 @@
 				243F9C1D254A9511002F52A6 /* WebViewController.h */,
 				243F9C1E254A9511002F52A6 /* WebViewController.m */,
 				243F9C1F254A9511002F52A6 /* WebViewController.xib */,
-				2433F203255290A000A61946 /* ExternalWebViewController.h */,
-				2433F204255290A000A61946 /* ExternalWebViewController.m */,
-				2433F205255290A000A61946 /* ExternalWebViewController.xib */,
+				24120E7F255396940028DC38 /* SubWebViewController.h */,
+				24120E80255396940028DC38 /* SubWebViewController.m */,
+				24120E81255396940028DC38 /* SubWebViewController.xib */,
 			);
 			path = WebView;
 			sourceTree = "<group>";
@@ -330,8 +330,8 @@
 				247D255D254AA04C00100997 /* IntroViewController.xib in Resources */,
 				243F9C09254A8674002F52A6 /* Assets.xcassets in Resources */,
 				2417D1B825513CA80083AAF3 /* SideMenuViewController.xib in Resources */,
-				2433F207255290A000A61946 /* ExternalWebViewController.xib in Resources */,
 				243F9C04254A8672002F52A6 /* Main.storyboard in Resources */,
+				24120E83255396940028DC38 /* SubWebViewController.xib in Resources */,
 				2433F1F02552284E00A61946 /* SideMenuContentCell.xib in Resources */,
 				247D2566254AA1AD00100997 /* TestViewController.xib in Resources */,
 				243F9C21254A9511002F52A6 /* WebViewController.xib in Resources */,
@@ -391,9 +391,9 @@
 				24BE34F8254FEA750072CFED /* NetworkManager.m in Sources */,
 				2433F1F8255239CE00A61946 /* ProjectManagementItem.m in Sources */,
 				243F9C0F254A8674002F52A6 /* main.m in Sources */,
+				24120E82255396940028DC38 /* SubWebViewController.m in Sources */,
 				2433F1EF2552284E00A61946 /* SideMenuContentCell.m in Sources */,
 				247D255C254AA04C00100997 /* IntroViewController.m in Sources */,
-				2433F206255290A000A61946 /* ExternalWebViewController.m in Sources */,
 				247D2565254AA1AD00100997 /* TestViewController.m in Sources */,
 				24BE34FC254FF9170072CFED /* CommonUtil.m in Sources */,
 				2433F1F4255239B600A61946 /* AdminMenuItem.m in Sources */,

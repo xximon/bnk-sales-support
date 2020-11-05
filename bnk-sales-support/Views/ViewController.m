@@ -218,7 +218,7 @@
     UINavigationController *navCtrl = [[UINavigationController alloc] initWithRootViewController:webVC];
     navCtrl.modalPresentationStyle = UIModalPresentationFullScreen;
     navCtrl.navigationBar.hidden = YES;
-    [self presentViewController:navCtrl animated:NO completion:nil];
+    [self presentViewController:navCtrl animated:YES completion:nil];
 }
 
 -(void)closeWebView {
