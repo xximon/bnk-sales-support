@@ -80,6 +80,12 @@
 //그룹웨어 웹뷰 닫기
 #define  CLOSE_EXT_WEBVIEW                  [[NSNotificationCenter defaultCenter] postNotificationName:@"CLOSE_EXT_WEBVIEW" object:nil];
 
+// 3, LOADING
+//로더 실행
+#define  START_WAITING                  [[NSNotificationCenter defaultCenter] postNotificationName:@"START_WAITING" object:nil];
+//로더 중지
+#define  STOP_WAITING                   [[NSNotificationCenter defaultCenter] postNotificationName:@"STOP_WAITING" object:nil];
+
 
 
 /* ----------------------------------------- [END] Notifications --------------------------------------------- */

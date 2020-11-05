@@ -6,6 +6,7 @@
 //
 
 #import "WebViewController.h"
+#import <JavaScriptCore/JavaScriptCore.h>
 
 @interface WebViewController (){
     
@@ -31,6 +32,8 @@
     
     [self initView];
     [self initListener];
+    
+    [self loaderInitilize];
 }
 
 - (void)viewDidLayoutSubviews{
@@ -59,6 +62,24 @@
     
 }
 
+-(void)initWebBridge {
+    WKUserContentController *controller = config.userContentController;
+
+    [controller removeAllUserScripts];
+    [controller removeScriptMessageHandlerForName:@"bnkBridge"];
+
+    [controller addScriptMessageHandler:self name:@"bnkBridge"];
+//    WKUserScript *script = [[WKUserScript alloc] initWithSource:@"mobileToHtml()" injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:YES];
+//    [controller addUserScript:script];
+
+    // web settings
+//    [config setUserContentController:controller];
+    [config.preferences setValue:@"TRUE" forKey:@"allowFileAccessFromFileURLs"];
+    [config setValue:@"TRUE" forKey:@"allowUniversalAccessFromFileURLs"];
+    config.preferences.javaScriptEnabled = YES;
+    config.preferences.javaScriptCanOpenWindowsAutomatically = YES;
+}
+
 -(void)initWebViewSetting {
     processPool = [[WKProcessPool alloc] init];
     config = [[WKWebViewConfiguration alloc]init];
@@ -68,10 +89,13 @@
     
     config.processPool = processPool;
     config.preferences.javaScriptCanOpenWindowsAutomatically = YES;
+    
+    [self initWebBridge];
 }
 
 -(NSURLRequest *)getUrlRequest {
-    NSString *strUrl = @"https://www.naver.com";
+//    NSString *strUrl = @"https://www.naver.com";
+    NSString *strUrl = @"https://bnkclass.bnksys.co.kr/BSS/index.html";
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:strUrl]];
     return request;
 }
@@ -108,6 +132,7 @@
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
     NSLog(@"== 2. didFinishNavigation");
+    
 }
 
 - (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error{
@@ -139,11 +164,11 @@
         
         // 1. 로딩 에니메이션 Show
         if([strCommand isEqualToString:@"START_LOADING"]){
-            
+            START_WAITING
         }
         // 2. 로딩 에니메이션 Hide
         if([strCommand isEqualToString:@"END_LOADING"]){
-            
+            STOP_WAITING
         }
         // 3. 화면 전환 모드(NATIVE, WEB)
         if([strCommand isEqualToString:@"CHANGE_MODE"]){
@@ -166,4 +191,17 @@
 
 #pragma mark - WKUIDelegate
 
+
+#pragma mark - Loading View
+//1. 로더 생성
+- (void)loaderInitilize {
+    if (_loadingView) {
+        [_loadingView removeFromSuperview];
+    }
+    _loadingView = nil;
+    _loadingView = [[[NSBundle mainBundle] loadNibNamed:@"LoadingView" owner:self options:nil] firstObject];
+    _loadingView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+    [self.view addSubview:_loadingView];
+    [_loadingView stopWaiting];
+}
 @end

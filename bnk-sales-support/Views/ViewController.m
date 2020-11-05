@@ -31,6 +31,7 @@
 
 -(void)initView{
     [self menuViewInitilize];
+    [self loaderInitilize];
 }
 
 -(void)initListener{
@@ -223,6 +224,19 @@
 
 -(void)closeWebView {
     
+}
+
+#pragma mark - Loading View
+//1. 로더 생성
+- (void)loaderInitilize {
+    if (_loadingView) {
+        [_loadingView removeFromSuperview];
+    }
+    _loadingView = nil;
+    _loadingView = [[[NSBundle mainBundle] loadNibNamed:@"LoadingView" owner:self options:nil] firstObject];
+    _loadingView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+    [self.view addSubview:_loadingView];
+    [_loadingView stopWaiting];
 }
 
 @end
