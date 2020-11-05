@@ -10,6 +10,8 @@
 
 #import "LoadingView.h"
 
+#import "SubWebViewController.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface WebViewController : UIViewController <WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler>
@@ -17,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 //MARK: properties
 @property (strong, nonatomic) WKWebView *webView;
 @property(strong, atomic) LoadingView *loadingView;
+
+
 
 @end
 

@@ -18,10 +18,7 @@
 
 @end
 
-@implementation WebViewController{
-    //MARK: properties
-    
-}
+@implementation WebViewController
 
 
 
@@ -144,7 +141,7 @@
     NSLog(@"=== [WEB -> NATIVE] didReceiveScriptMessage Name : %@", message.name);
     NSLog(@"=== [WEB -> NATIVE] didReceiveScriptMessage Body : %@", message.body);
     
-    // WEB -> NATIVE 호출 제어
+    //MARK: WEB -> NATIVE 호출 제어
     if (message) {
         NSError* error;
         NSData *data = [message.body dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES] ;
@@ -160,7 +157,7 @@
             return;
         }
         
-        
+        NSDictionary *dictParams = json[@"params"];
         
         // 1. 로딩 에니메이션 Show
         if([strCommand isEqualToString:@"START_LOADING"]){
@@ -173,18 +170,35 @@
         // 3. 화면 전환 모드(NATIVE, WEB)
         if([strCommand isEqualToString:@"CHANGE_MODE"]){
             // 1) NATIVE: 네이티브 화면 표시
+            if([dictParams[@"mode"] isEqualToString:@"NATIVE"]){
+                
+            }
             // 2) WEB: 웹뷰 화면 표시
+            else if([dictParams[@"mode"] isEqualToString:@"WEB"]){
+                
+            }
         }
         // 4. 네이티브 메뉴 (SHOW, HIDE)
         if([strCommand isEqualToString:@"OPEN_MENU"]){
             // 1) SHOW: 네이티브 메뉴 표시
+            if([dictParams[@"menu"] isEqualToString:@"SHOW"]){
+                
+            }
             // 2) HIDE: 네이티브 메뉴 숨김
-            
+            else if([dictParams[@"menu"] isEqualToString:@"HIDE"]){
+                
+            }
         }
         // 5. 웹뷰 show (SUB, EXTERNAL)
         if([strCommand isEqualToString:@"OPEN_WEBVIEW"]){
             // 1) SUB: 서브 웹뷰로 이동
+            if([dictParams[@"action"] isEqualToString:@"SUB"]){
+                
+            }
             // 2) EXTERNAL: 외부 (다른 브라우저) 로 이동
+            else if([dictParams[@"action"] isEqualToString:@"EXTERNAL"]){
+                
+            }
         }
     }
 }

@@ -7,6 +7,7 @@
 
 #import "ViewController.h"
 #import "WebViewController.h"
+#import "SubWebViewController.h"
 
 #import "AdminMenuItem.h"
 #import "ProjectManagementItem.h"
@@ -45,6 +46,15 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showWebView) name:@"SHOW_WEBVIEW" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(closeWebView) name:@"CLOSE_WEBVIEW" object:nil];
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"SHOW_MENU" object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"CLOSE_MENU" object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"CLOSE_MENU_NO_ANIMATION" object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"SHOW_WEBVIEW" object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"CLOSE_WEBVIEW" object:nil];
 }
 
 // 초기데이터 요청 및 수신
