@@ -76,6 +76,8 @@
 		24120F622553CD6F0028DC38 /* FullLoader.json in Resources */ = {isa = PBXBuildFile; fileRef = 24120F602553CD6F0028DC38 /* FullLoader.json */; };
 		24120F672553DD400028DC38 /* MainNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24120F652553DD400028DC38 /* MainNaviViewController.m */; };
 		24120F682553DD400028DC38 /* MainNaviViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24120F662553DD400028DC38 /* MainNaviViewController.xib */; };
+		24120F702553F1640028DC38 /* WebNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24120F6E2553F1640028DC38 /* WebNaviViewController.m */; };
+		24120F712553F1640028DC38 /* WebNaviViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24120F6F2553F1640028DC38 /* WebNaviViewController.xib */; };
 		2417D1B725513CA80083AAF3 /* SideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2417D1B525513CA80083AAF3 /* SideMenuViewController.m */; };
 		2417D1B825513CA80083AAF3 /* SideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2417D1B625513CA80083AAF3 /* SideMenuViewController.xib */; };
 		2433F1EF2552284E00A61946 /* SideMenuContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2433F1ED2552284E00A61946 /* SideMenuContentCell.m */; };
@@ -243,6 +245,9 @@
 		24120F642553DD400028DC38 /* MainNaviViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainNaviViewController.h; sourceTree = "<group>"; };
 		24120F652553DD400028DC38 /* MainNaviViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainNaviViewController.m; sourceTree = "<group>"; };
 		24120F662553DD400028DC38 /* MainNaviViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainNaviViewController.xib; sourceTree = "<group>"; };
+		24120F6D2553F1640028DC38 /* WebNaviViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebNaviViewController.h; sourceTree = "<group>"; };
+		24120F6E2553F1640028DC38 /* WebNaviViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebNaviViewController.m; sourceTree = "<group>"; };
+		24120F6F2553F1640028DC38 /* WebNaviViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebNaviViewController.xib; sourceTree = "<group>"; };
 		2417D1B425513CA80083AAF3 /* SideMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SideMenuViewController.h; sourceTree = "<group>"; };
 		2417D1B525513CA80083AAF3 /* SideMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SideMenuViewController.m; sourceTree = "<group>"; };
 		2417D1B625513CA80083AAF3 /* SideMenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuViewController.xib; sourceTree = "<group>"; };
@@ -723,6 +728,9 @@
 				24120E7F255396940028DC38 /* SubWebViewController.h */,
 				24120E80255396940028DC38 /* SubWebViewController.m */,
 				24120E81255396940028DC38 /* SubWebViewController.xib */,
+				24120F6D2553F1640028DC38 /* WebNaviViewController.h */,
+				24120F6E2553F1640028DC38 /* WebNaviViewController.m */,
+				24120F6F2553F1640028DC38 /* WebNaviViewController.xib */,
 			);
 			path = WebView;
 			sourceTree = "<group>";
@@ -817,6 +825,7 @@
 				2433F20A2552972600A61946 /* InitData.json in Resources */,
 				247D255D254AA04C00100997 /* IntroViewController.xib in Resources */,
 				24120F612553CD6F0028DC38 /* IntroLoader.json in Resources */,
+				24120F712553F1640028DC38 /* WebNaviViewController.xib in Resources */,
 				243F9C09254A8674002F52A6 /* Assets.xcassets in Resources */,
 				2417D1B825513CA80083AAF3 /* SideMenuViewController.xib in Resources */,
 				243F9C04254A8672002F52A6 /* Main.storyboard in Resources */,
@@ -909,6 +918,7 @@
 				24120F1A2553C2BB0028DC38 /* LOTPointInterpolator.m in Sources */,
 				24120F4E2553C2BB0028DC38 /* LOTBezierData.m in Sources */,
 				24120F672553DD400028DC38 /* MainNaviViewController.m in Sources */,
+				24120F702553F1640028DC38 /* WebNaviViewController.m in Sources */,
 				24120F462553C2BB0028DC38 /* LOTAnimationView.m in Sources */,
 				24120F322553C2BB0028DC38 /* LOTShapeStar.m in Sources */,
 				24120F2B2553C2BB0028DC38 /* UIColor.m in Sources */,

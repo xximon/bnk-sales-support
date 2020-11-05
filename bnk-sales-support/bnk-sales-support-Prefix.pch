@@ -17,6 +17,10 @@
 #import "AppDelegate.h"
 #import "NetworkManager.h"
 
+// ViewControllers
+#import "MainNaviViewController.h"
+#import "ViewController.h"
+
 
 #define SCREEN_BOUNDS        [[UIScreen mainScreen] bounds]
 #define SCREEN_WIDTH         ([[UIScreen mainScreen] bounds].size.width)
