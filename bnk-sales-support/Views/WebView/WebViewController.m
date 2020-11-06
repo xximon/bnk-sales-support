@@ -8,11 +8,16 @@
 #import "WebViewController.h"
 #import <JavaScriptCore/JavaScriptCore.h>
 
+#import "WebBridgeUtil.h"
+
 @interface WebViewController (){
     
     WKWebViewConfiguration *config;
     WKUserContentController *jsctrl;
     WKProcessPool *processPool;
+    WKUserScript *userScript;
+    
+    SubWebViewController *subWebVC;
     
 }
 
@@ -27,10 +32,27 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showWebView) name:@"SHOW_WEBVIEW" object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(closeWebView) name:@"CLOSE_WEBVIEW" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(requestFromNative:) name:@"REQUEST_FROM_NATIVE" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onChangePage) name:@"ON_CHANGE_PAGE" object:nil];
+    
     [self initView];
     [self initListener];
     
     [self loaderInitilize];
+    
+    
+    subWebVC = [[SubWebViewController alloc] initWithNibName:@"SubWebViewController" bundle:nil];
+//    [self.navigationController pushViewController:subWebVC animated:nil];
+}
+
+- (void)dealloc{
+//    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"SHOW_WEBVIEW" object:nil];
+//    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"CLOSE_WEBVIEW" object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"REQUEST_FROM_NATIVE" object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"ON_CHANGE_PAGE" object:nil];
 }
 
 - (void)viewDidLayoutSubviews{
@@ -38,8 +60,12 @@
 }
 
 
+
+
 //MARK: Initialize
 -(void)initView {
+//    [self.view setHidden:YES];
+    
     [self initWebViewSetting];
     
     self.webView = [[WKWebView alloc]initWithFrame:self.view.frame configuration:config];
@@ -49,6 +75,7 @@
     self.webView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:self.webView];
     
+    //TODO: iOS 11 미만 분기처리 필요
     [[self.webView.leadingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leadingAnchor] setActive:YES];
     [[self.webView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor] setActive:YES];
     [[self.webView.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.trailingAnchor] setActive:YES];
@@ -60,14 +87,12 @@
 }
 
 -(void)initWebBridge {
+    
     WKUserContentController *controller = config.userContentController;
-
     [controller removeAllUserScripts];
     [controller removeScriptMessageHandlerForName:@"bnkBridge"];
-
+   
     [controller addScriptMessageHandler:self name:@"bnkBridge"];
-//    WKUserScript *script = [[WKUserScript alloc] initWithSource:@"mobileToHtml()" injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:YES];
-//    [controller addUserScript:script];
 
     // web settings
 //    [config setUserContentController:controller];
@@ -91,12 +116,48 @@
 }
 
 -(NSURLRequest *)getUrlRequest {
-//    NSString *strUrl = @"https://www.naver.com";
-    NSString *strUrl = @"https://bnkclass.bnksys.co.kr/BSS/index.html";
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:strUrl]];
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:WEBVIEW_URL]];
     return request;
 }
 
+-(NSString *)getPageChangePath{
+    
+    NSArray *jsonDataArray = [[NSArray alloc]init];
+    NSString *strInitData = [[NSUserDefaults standardUserDefaults]stringForKey:INITDATA_KEY];
+    NSError *err =  nil;
+    NSDictionary *dictInitData = [NSJSONSerialization JSONObjectWithData:[strInitData dataUsingEncoding:NSUTF8StringEncoding] options:nil error:&err];
+    jsonDataArray = dictInitData[@"menus"][1][@"children"];
+    NSDictionary *dictPath = jsonDataArray[0];
+    return [NSString stringWithFormat:@"onChangePage(\"%@\")", dictPath[@"path"]];
+}
+
+#pragma mark - Notifications
+
+-(void)showWebView {
+    [self.view setHidden:NO];
+}
+
+-(void)closeWebView {
+    [self.view setHidden:YES];
+}
+
+#pragma mark - NATIVE -> WEB
+
+//MARK: call JS functions
+//FIXME: 네이밍 변경: ?? > requestFromNative
+-(void)requestFromNative:(NSNotification *)noti {
+//    NSString *js = [self getPageChangePath];
+    NSDictionary *dictInfo = [noti userInfo];
+    NSString *js;
+    [WebBridgeUtil requestFromNative:self.webView json:js];
+}
+
+//FIXME: 네이밍 변경: callJavascriptFunc > onChangePage
+-(void)onChangePage {
+    NSString *js = [self getPageChangePath];
+    
+    [WebBridgeUtil onChangePage:self.webView path:js];
+}
 
 #pragma mark - WKNavigationDelegate
 
@@ -193,7 +254,7 @@
         if([strCommand isEqualToString:@"OPEN_WEBVIEW"]){
             // 1) SUB: 서브 웹뷰로 이동
             if([dictParams[@"action"] isEqualToString:@"SUB"]){
-                
+                [self.navigationController pushViewController:subWebVC animated:YES];
             }
             // 2) EXTERNAL: 외부 (다른 브라우저) 로 이동
             else if([dictParams[@"action"] isEqualToString:@"EXTERNAL"]){

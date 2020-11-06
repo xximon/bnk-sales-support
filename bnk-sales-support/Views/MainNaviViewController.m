@@ -20,6 +20,12 @@
 
 
 
+#pragma mark - 메인 네비게이션 초기화
+-(void)rootViewControllerInitialize {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    IntroViewController *introViewController = [storyboard instantiateViewControllerWithIdentifier:@"IntroViewController"];
+    self.viewControllers = @[introViewController];
+}
 
 
 #pragma mark - 웹뷰

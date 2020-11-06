@@ -98,6 +98,7 @@
 		247D255D254AA04C00100997 /* IntroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 247D255B254AA04C00100997 /* IntroViewController.xib */; };
 		247D2565254AA1AD00100997 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 247D2563254AA1AD00100997 /* TestViewController.m */; };
 		247D2566254AA1AD00100997 /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 247D2564254AA1AD00100997 /* TestViewController.xib */; };
+		247D536725551FEF009E14AE /* WebBridgeUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 247D536625551FEF009E14AE /* WebBridgeUtil.m */; };
 		24BE34F8254FEA750072CFED /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24BE34F7254FEA750072CFED /* NetworkManager.m */; };
 		24BE34FC254FF9170072CFED /* CommonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 24BE34FB254FF9170072CFED /* CommonUtil.m */; };
 		7D2637C501872722B6E52EED /* Pods_bnk_sales_support.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31F9293D9503A3DB19911005 /* Pods_bnk_sales_support.framework */; };
@@ -280,6 +281,8 @@
 		247D2563254AA1AD00100997 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		247D2564254AA1AD00100997 /* TestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
 		247D256A254ABA9100100997 /* bnk-sales-support-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bnk-sales-support-Prefix.pch"; sourceTree = "<group>"; };
+		247D536525551FEF009E14AE /* WebBridgeUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebBridgeUtil.h; sourceTree = "<group>"; };
+		247D536625551FEF009E14AE /* WebBridgeUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebBridgeUtil.m; sourceTree = "<group>"; };
 		24BE34F6254FEA750072CFED /* NetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		24BE34F7254FEA750072CFED /* NetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 		24BE34FA254FF9170072CFED /* CommonUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonUtil.h; sourceTree = "<group>"; };
@@ -706,6 +709,8 @@
 			children = (
 				24BE34FA254FF9170072CFED /* CommonUtil.h */,
 				24BE34FB254FF9170072CFED /* CommonUtil.m */,
+				247D536525551FEF009E14AE /* WebBridgeUtil.h */,
+				247D536625551FEF009E14AE /* WebBridgeUtil.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -901,6 +906,7 @@
 				24120F4B2553C2BB0028DC38 /* LOTInterpolatorCallback.m in Sources */,
 				24120F292553C2BB0028DC38 /* LOTRepeaterRenderer.m in Sources */,
 				24120F1E2553C2BB0028DC38 /* LOTNumberInterpolator.m in Sources */,
+				247D536725551FEF009E14AE /* WebBridgeUtil.m in Sources */,
 				24120F402553C2BB0028DC38 /* LOTRadialGradientLayer.m in Sources */,
 				24120F342553C2BB0028DC38 /* LOTShapeGradientFill.m in Sources */,
 				243F9C0F254A8674002F52A6 /* main.m in Sources */,

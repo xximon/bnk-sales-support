@@ -12,6 +12,10 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+
+@property (strong, nonatomic) NSString *serverUrl;
+@property (strong, nonatomic) NSString *webViewUrl;
+
 @property (strong, nonatomic) MainNaviViewController *mainNaviViewController;
 
 //@property (readonly, strong) NSPersistentContainer *persistentContainer;

@@ -33,13 +33,20 @@
 #define  SHOW_KEYBOARD_AFTERDELAY   0.2f
 #define  SLIDE_TABBAR_DURATION_TIME   0.2f
 
+#define gAppDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
+
 /* ----------------------------------------- [START]빌드 형태 분기 --------------------------------------------- */
 
 /* 개발 */
 #ifdef DEBUG
 
 //#define SERVER_URL                           @"https://localhost:8080"         // 개발서버
-#define SERVER_URL                           @"http://192.168.128.155:8080"         // 개발서버
+#define SERVER_URL_TEST                              @"http://192.168.128.155:8080" // 테스트(류호진계장 로컬)
+#define SERVER_URL_DEV                               @"https://bss.bnksys.co.kr"    // 개발서버
+#define SERVER_URL_DEV_BNK                           @"https://dm.busanbank.co.kr"  // 개발(부산은행)
+#define SERVER_URL_REAL_BNK                          @"https://m.busanbank.co.kr"   // 운영(부산은행)
+
+#define WEBVIEW_URL                @"https://bnkclass.bnksys.co.kr/BSS/index.html" // 메인 웹뷰 테스트용 URL
 
 #define NSLog( s, ... ) NSLog( @"<%p %@:(%d)> %@", self, [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] ) // 개발 경우만 로그 출력
 
@@ -79,10 +86,24 @@
 #define  SHOW_WEBVIEW                   [[NSNotificationCenter defaultCenter] postNotificationName:@"SHOW_WEBVIEW" object:nil];
 //웹뷰 닫기
 #define  CLOSE_WEBVIEW                  [[NSNotificationCenter defaultCenter] postNotificationName:@"CLOSE_WEBVIEW" object:nil];
-//그룹웨어 웹뷰 열기
+
+//그룹웨어(SUB) 웹뷰 열기
+#define  SHOW_SUB_WEBVIEW                   [[NSNotificationCenter defaultCenter] postNotificationName:@"SHOW_SUB_WEBVIEW" object:nil];
+
+//그룹웨어(SUB) 웹뷰 닫기
+#define  CLOSE_SUB_WEBVIEW                  [[NSNotificationCenter defaultCenter] postNotificationName:@"CLOSE_SUB_WEBVIEW" object:nil];
+
+//외부 웹뷰(브라우저) 열기
 #define  SHOW_EXT_WEBVIEW                   [[NSNotificationCenter defaultCenter] postNotificationName:@"SHOW_EXT_WEBVIEW" object:nil];
-//그룹웨어 웹뷰 닫기
+//외부 웹뷰(브라우저) 닫기
 #define  CLOSE_EXT_WEBVIEW                  [[NSNotificationCenter defaultCenter] postNotificationName:@"CLOSE_EXT_WEBVIEW" object:nil];
+
+#define  ON_CLICK_PROJ_MGNT                  [[NSNotificationCenter defaultCenter] postNotificationName:@"ON_CLICK_PROJ_MGNT" object:nil];
+
+// 2-1. 자바스크립트 함수 호출
+#define  REQUEST_FROM_NATIVE                  [[NSNotificationCenter defaultCenter] postNotificationName:@"REQUEST_FROM_NATIVE" object:nil];
+#define  ON_CHANGE_PAGE                  [[NSNotificationCenter defaultCenter] postNotificationName:@"ON_CHANGE_PAGE" object:nil];
+
 
 // 3, LOADING
 //로더 실행
@@ -98,5 +119,11 @@
 
 /* ----------------------------------------- [START] UserDefaults --------------------------------------------- */
 #define INITDATA_KEY                 @"init_data"
+
+/* ----------------------------------------- [END] UserDefaults --------------------------------------------- */
+
+
+/* ----------------------------------------- [START] JavaScript Interface METHOD ---------------------------- */
+//#define ON_CHANGE_PAGE                   @"onChangePage"
 
 /* ----------------------------------------- [END] UserDefaults --------------------------------------------- */

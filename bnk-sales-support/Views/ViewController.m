@@ -19,18 +19,29 @@
 
 @end
 
-@implementation ViewController
+@implementation ViewController{
+    WebViewController *webVC;
+    SubWebViewController *subWebVC;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    webVC = [[WebViewController alloc] initWithNibName:@"WebViewController" bundle:nil];
+    subWebVC = [[SubWebViewController alloc] initWithNibName:@"SubWebViewController" bundle:nil];
+    
     [self initView];
     [self initListener];
     [self getInitData];
+    
 }
 
 -(void)initView{
+//    [self onCreateWebViews];
+    
+    [self.practiceView setHidden:YES];
+    
     [self menuViewInitilize];
     [self loaderInitilize];
 }
@@ -46,6 +57,8 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showWebView) name:@"SHOW_WEBVIEW" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(closeWebView) name:@"CLOSE_WEBVIEW" object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onClickProjMgnt) name:@"ON_CLICK_PROJ_MGNT" object:nil];
 }
 
 - (void)dealloc {
@@ -55,6 +68,8 @@
     
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"SHOW_WEBVIEW" object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"CLOSE_WEBVIEW" object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"ON_CLICK_PROJ_MGNT" object:nil];
 }
 
 // 초기데이터 요청 및 수신
@@ -66,6 +81,7 @@
         @"password": @"aa12345^"
     };
     
+    //MARK: [HTTP] POST request
 //    [[NetworkManager sharedInstance]post:[NSString stringWithFormat:@"%@%@%@", SERVER_URL,API,INIT_DATA]                                 parameters:param
 //                                headers:nil
 //                                complete:^(id  _Nullable responseObj, NSURLResponse * _Nonnull response) {
@@ -137,6 +153,43 @@
         
     }
 }
+
+- (IBAction)onClickUrlBtn:(id)sender {
+    switch([sender tag]){
+        case 1:
+            gAppDelegate.serverUrl = SERVER_URL_TEST;
+            break;
+        case 2:
+            gAppDelegate.serverUrl = SERVER_URL_DEV;
+            break;
+        case 3:
+            gAppDelegate.serverUrl = SERVER_URL_DEV_BNK;
+            break;
+        case 4:
+            gAppDelegate.serverUrl = SERVER_URL_REAL_BNK;
+            break;
+        case 5:
+            gAppDelegate.webViewUrl = WEBVIEW_URL;
+            NSLog(@"=== TEST WEBVIEW URL: %@",gAppDelegate.webViewUrl);
+            self.tfWebViewUrl.text = gAppDelegate.webViewUrl;
+        default: break;
+    }
+    
+    NSLog(@"=== select URL: %@",gAppDelegate.serverUrl);
+    
+    self.tfServerUrl.text = gAppDelegate.serverUrl;
+}
+
+- (IBAction)onClickStartBtn:(id)sender {
+    if(self.tfServerUrl.text != nil && ![self.tfServerUrl.text isEqualToString:@""]
+       && self.tfWebViewUrl.text != nil && ![self.tfWebViewUrl.text isEqualToString:@""] ){
+        gAppDelegate.webViewUrl = self.tfWebViewUrl.text;
+        [self.testView setHidden:YES];
+        [self.practiceView setHidden:NO];
+    }
+}
+
+
 
 #pragma mark - 사이드 메뉴
 //메뉴 뷰컨트롤러 생성
@@ -221,15 +274,31 @@
     [self.view layoutIfNeeded];
 }
 
+-(void)onClickProjMgnt{
+    UINavigationController *navCtrl = [[UINavigationController alloc] initWithRootViewController:webVC];
+    navCtrl.modalPresentationStyle = UIModalPresentationFullScreen;
+    navCtrl.navigationBar.hidden = YES;
+    [self presentViewController:navCtrl animated:YES completion:^{
+        ON_CHANGE_PAGE;
+    }];
+    
+}
+
 
 #pragma mark - 웹뷰
 
 -(void)showWebView {
-    WebViewController *webVC = [[WebViewController alloc] initWithNibName:@"WebViewController" bundle:nil];
+//    [self.webView setHidden:NO];
+//    [self.subWebView setHidden:YES];
+    
     UINavigationController *navCtrl = [[UINavigationController alloc] initWithRootViewController:webVC];
     navCtrl.modalPresentationStyle = UIModalPresentationFullScreen;
     navCtrl.navigationBar.hidden = YES;
     [self presentViewController:navCtrl animated:YES completion:nil];
+}
+-(void)showSubWebView {
+//    [self.webView setHidden:YES];
+//    [self.subWebView setHidden:NO];
 }
 
 -(void)closeWebView {

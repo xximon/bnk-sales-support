@@ -35,7 +35,8 @@
     self.tvMenu.dataSource = self;
     self.tvMenu.delegate = self;
     
-//    [self setItems];
+    menuBtnDvcd = 1;
+    [self setItems:menuBtnDvcd];
 }
 
 -(void)initListener {
@@ -53,7 +54,7 @@
     if(tag == 1){
         arrMenuItems = data[@"menus"][0][@"children"];
     }else{
-        dictProjMng = data[@"menus"][1];
+        arrMenuItems = data[@"menus"][1][@"children"];
     }
 }
 
@@ -84,15 +85,20 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if(menuBtnDvcd == 1){
-        if(arrMenuItems.count<1){
-            return 1;
-        }else{
-            return arrMenuItems.count;
-        }
+//    if(menuBtnDvcd == 1){
+//        if(arrMenuItems.count<1){
+//            return 1;
+//        }else{
+//            return arrMenuItems.count;
+//        }
+//    }else{
+//        return 1;
+////        return dictProjMng.count;
+//    }
+    if(arrMenuItems.count > 0){
+        return arrMenuItems.count;
     }else{
         return 1;
-//        return dictProjMng.count;
     }
 }
 
@@ -100,18 +106,22 @@
     
     SideMenuContentCell *cell = [tableView dequeueReusableCellWithIdentifier:@"side_menu_content_cell" forIndexPath:indexPath];
     
-    
-    if(menuBtnDvcd == 1){
-        if (arrMenuItems != nil && arrMenuItems.count > 0) {
-            NSDictionary *dict = arrMenuItems[indexPath.row];
-            cell.lblTitle.text = dict[@"title"];
-        }else{
-            cell.lblTitle.text = nil;
-        }
-    }else if(menuBtnDvcd == 2){
-        NSDictionary *dict = dictProjMng;
+    if (arrMenuItems != nil && arrMenuItems.count > 0) {
+        NSDictionary *dict = arrMenuItems[indexPath.row];
         cell.lblTitle.text=dict[@"title"];
     }
+    
+//    if(menuBtnDvcd == 1){
+//        if (arrMenuItems != nil && arrMenuItems.count > 0) {
+//            NSDictionary *dict = arrMenuItems[indexPath.row];
+//            cell.lblTitle.text = dict[@"title"];
+//        }else{
+//            cell.lblTitle.text = nil;
+//        }
+//    }else if(menuBtnDvcd == 2){
+//        NSDictionary *dict = rrMenuItems[indexPath.row;
+//        cell.lblTitle.text=dict[@"title"];
+//    }
 
     return cell;
 }
@@ -119,6 +129,13 @@
 //MARK: Delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    if(menuBtnDvcd == 1){
+        
+    }else if(menuBtnDvcd == 2){
+        // TODO: 프로젝트관리 [ pageChange("/pms/Project") ] 구현
+        ON_CLICK_PROJ_MGNT
+//        SHOW_WEBVIEW;
+    }
 }
 
 @end
