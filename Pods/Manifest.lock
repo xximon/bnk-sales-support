@@ -17,22 +17,28 @@ PODS:
   - ReactiveCocoa (11.1.0):
     - ReactiveSwift (~> 6.2)
   - ReactiveSwift (6.5.0)
+  - SDWebImage (5.9.4):
+    - SDWebImage/Core (= 5.9.4)
+  - SDWebImage/Core (5.9.4)
 
 DEPENDENCIES:
   - AFNetworking
   - ReactiveCocoa
+  - SDWebImage
 
 SPEC REPOS:
   trunk:
     - AFNetworking
     - ReactiveCocoa
     - ReactiveSwift
+    - SDWebImage
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   ReactiveCocoa: 7bc87ad2d361b9de141278b1950edd7fe91b15b1
   ReactiveSwift: 8d159904084e908856cde90b2e28823f3c7e485f
+  SDWebImage: b69257f4ab14e9b6a2ef53e910fdf914d8f757c1
 
-PODFILE CHECKSUM: 2b037af95be963326fb58efe74141c3a4ffa2b73
+PODFILE CHECKSUM: d76049a86ba2d5c922b8407fc6609a6c517f1801
 
 COCOAPODS: 1.9.3
